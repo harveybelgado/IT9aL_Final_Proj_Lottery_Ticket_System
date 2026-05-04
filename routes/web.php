@@ -9,7 +9,7 @@ use App\Http\Controllers\DrawController;
 use App\Http\Controllers\ClaimController;
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect('/products');
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
