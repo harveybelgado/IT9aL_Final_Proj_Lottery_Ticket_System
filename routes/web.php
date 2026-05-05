@@ -9,7 +9,9 @@ use App\Http\Controllers\DrawController;
 use App\Http\Controllers\ClaimController;
 
 Route::get('/', function () {
-    return redirect('/products');
+    return auth()->check()
+        ? redirect()->route('dashboard')
+        : redirect()->route('login');
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
